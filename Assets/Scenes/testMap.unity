@@ -705,7 +705,7 @@ MonoBehaviour:
   rb: {fileID: 2067813095}
   moveSpeed: 3
   stamina: 100
-  sprintSpeed: 8
+  sprintSpeed: 6
 --- !u!50 &2067813095
 Rigidbody2D:
   serializedVersion: 5
