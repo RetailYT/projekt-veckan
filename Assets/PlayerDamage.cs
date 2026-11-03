@@ -4,7 +4,7 @@ using TMPro;
 public class PlayerHealth : MonoBehaviour
 {
     public int health = 100;
-    public int damage = 10;
+    public int damage = 25;
 
     public TextMeshProUGUI healthText;
 
