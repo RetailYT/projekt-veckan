@@ -9,7 +9,7 @@ public class followPlayer : MonoBehaviour
     }
 
     // Update is called once per frame
-    void LateUpdate()
+    void Update()
     {
         transform.position = player.position + new Vector3(0, 0, -10); // Keep the camera at a fixed distance behind the player
     }
