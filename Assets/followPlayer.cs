@@ -1,5 +1,4 @@
 using UnityEngine;
-
 public class followPlayer : MonoBehaviour
 {
     public Transform player; // Reference to the player's transform
