@@ -932,8 +932,9 @@ GameObject:
   - component: {fileID: 1647299635}
   - component: {fileID: 1647299634}
   - component: {fileID: 1647299633}
+  - component: {fileID: 1647299636}
   m_Layer: 0
-  m_Name: Triangle
+  m_Name: Enemy
   m_TagString: Damage
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1059,6 +1060,20 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1647299636
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1647299632}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ebe5034cfac44844190d150d45acc75d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  target: {fileID: 2067813093}
+  speed: 2
 --- !u!1 &2067813091
 GameObject:
   m_ObjectHideFlags: 0
@@ -1181,7 +1196,7 @@ Rigidbody2D:
   m_UseAutoMass: 0
   m_Mass: 1
   m_LinearDamping: 0
-  m_AngularDamping: 0.05
+  m_AngularDamping: 0
   m_GravityScale: 0
   m_Material: {fileID: 0}
   m_IncludeLayers:
@@ -1193,7 +1208,7 @@ Rigidbody2D:
   m_Interpolate: 0
   m_SleepingMode: 1
   m_CollisionDetection: 0
-  m_Constraints: 0
+  m_Constraints: 4
 --- !u!61 &2067813096
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -1249,7 +1264,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 2067813091}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 41dbc6e637beb114eb101f2a49f29bb3, type: 3}
+  m_Script: {fileID: 11500000, guid: 0641e5b08c3855d4083edb1cc544c1e9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   health: 100
