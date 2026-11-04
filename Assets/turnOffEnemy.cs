@@ -3,11 +3,13 @@ using UnityEngine;
 public class turnOffEnemy : MonoBehaviour
 {
 
+    public GameObject enemy; // Reference to the enemy GameObject that will be turned off when the player enters the trigger.
+
     private void OnTriggerEnter2D(Collider2D other) // This method is called when another collider enters the trigger collider attached to the GameObject this script is attached to.
     {
-        if (other.CompareTag("Enemy")) // Check if the other collider has the tag "Enemy"
+        if (other.CompareTag("Player")) // Check if the other collider has the tag "Player"
         {
-            other.gameObject.SetActive(false); //Turns off the enemy GameObject
+            enemy.gameObject.SetActive(false);  // If the other collider is the player, deactivate the enemy GameObject.
         }
     }
 }
