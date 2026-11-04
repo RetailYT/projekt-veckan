@@ -8,6 +8,7 @@ public class PlayerHealth : MonoBehaviour
 
     public TextMeshProUGUI healthText;
 
+    
     void Start()
     {
         healthText.text = "HP: " + health;
@@ -15,14 +16,14 @@ public class PlayerHealth : MonoBehaviour
 
     void OnCollisionEnter2D(Collision2D collision)
     {
-        if (collision.gameObject.CompareTag("Damage"))
+        if (collision.gameObject.CompareTag("Enemy"))
         {
             health -= damage;
 
             if (health == 0)
             {
                 Object.Destroy(gameObject);
-            }
+             }
 
             healthText.text = "HP: " + health;
         }
