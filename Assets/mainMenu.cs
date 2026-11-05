@@ -5,7 +5,7 @@ public class mainMenu : MonoBehaviour
  
     public void StartGame()
     {
-        SceneManager.LoadScene("testMap");
+        SceneManager.LoadScene("Overworld");
     }
     public void QuitGame()
     {

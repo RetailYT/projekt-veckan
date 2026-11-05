@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Main Menu.unity
     guid: 0f8d978cc374bc848b7c5b4ba2fc2bea
   - enabled: 1
+    path: Assets/Scenes/OverWorld.unity
+    guid: 854b24ae8ab8d694a94d6b2b84fb44d4
+  - enabled: 1
     path: Assets/Scenes/level.unity
     guid: 412539491b3ac9e44a4f937ad16ba00c
   - enabled: 1
@@ -17,9 +20,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/platformerTestMap.unity
     guid: b1f09c07b1bf4964f9933a6f4e9f0190
-  - enabled: 1
-    path: Assets/Scenes/OverWorld.unity
-    guid: 854b24ae8ab8d694a94d6b2b84fb44d4
   m_configObjects:
     com.unity.input.settings.actions: {fileID: -944628639613478452, guid: 2bcd2660ca9b64942af0de543d8d7100, type: 3}
   m_UseUCBPForAssetBundles: 0
