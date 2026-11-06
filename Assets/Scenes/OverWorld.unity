@@ -2509,9 +2509,16 @@ PrefabInstance:
       propertyPath: m_Name
       value: Bear
       objectReference: {fileID: 0}
+    - target: {fileID: 7882882420517818539, guid: f7aed84c2ad7eef43b7d93abfe6ebc61, type: 3}
+      propertyPath: quest
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
-    m_AddedGameObjects: []
+    m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 877629890247004533, guid: f7aed84c2ad7eef43b7d93abfe6ebc61, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1835504525}
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f7aed84c2ad7eef43b7d93abfe6ebc61, type: 3}
 --- !u!1 &974469758
@@ -3482,6 +3489,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!4 &1154254819 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 877629890247004533, guid: f7aed84c2ad7eef43b7d93abfe6ebc61, type: 3}
+  m_PrefabInstance: {fileID: 943073651}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1154587575
 GameObject:
   m_ObjectHideFlags: 0
@@ -5165,6 +5177,11 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!224 &1835504525 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 3791224663115449265, guid: 379db1e6b2f006c4aba65a0faacd5e60, type: 3}
+  m_PrefabInstance: {fileID: 2090273123}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1861889316
 GameObject:
   m_ObjectHideFlags: 0
@@ -6112,7 +6129,7 @@ PrefabInstance:
   serializedVersion: 2
   m_Modification:
     serializedVersion: 3
-    m_TransformParent: {fileID: 0}
+    m_TransformParent: {fileID: 1154254819}
     m_Modifications:
     - target: {fileID: 3791224663115449265, guid: 379db1e6b2f006c4aba65a0faacd5e60, type: 3}
       propertyPath: m_Pivot.x
@@ -6597,7 +6614,6 @@ SceneRoots:
   - {fileID: 2040094693}
   - {fileID: 1302040875}
   - {fileID: 943073651}
-  - {fileID: 2090273123}
   - {fileID: 1509778085}
   - {fileID: 260510161}
   - {fileID: 1749960864}

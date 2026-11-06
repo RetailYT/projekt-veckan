@@ -7,6 +7,9 @@ TagManager:
   - Enemy
   - Spike
   - OverWorld
+  - CaveTP
+  - Bar
+  - Honey
   layers:
   - Default
   - TransparentFX

@@ -30,8 +30,8 @@ public class HoneyQuestManager : MonoBehaviour
 
     void Start()
     {
-        questText.gameObject.SetActive(started);
         dialoguePanel.SetActive(false);
+        questText.gameObject.SetActive(true);
         UpdateQuest();
     }
 
@@ -39,8 +39,10 @@ public class HoneyQuestManager : MonoBehaviour
     {
         if (playerNearby && Input.GetKeyDown(KeyCode.Z))
         {
-            if (dialoguePanel.activeSelf) CloseDialogue();
-            else Talk();
+            if (dialoguePanel.activeSelf)
+                CloseDialogue();
+            else
+                Talk();
         }
     }
 
@@ -61,25 +63,30 @@ public class HoneyQuestManager : MonoBehaviour
 
     public void Talk()
     {
-        started = true;
-        questText.gameObject.SetActive(true);
-
-        if (collectedBottles >= requiredBottles)
+        if (!started)
+        {
+            started = true;
+            ShowDialogue("Hello explorer! Can you please help me find my 5 honey bottles?");
+        }
+        else if (collectedBottles < requiredBottles)
+        {
+            ShowDialogue("I still need " +
+                (requiredBottles - collectedBottles) +
+                " more honey bottles!");
+        }
+        else
         {
             completed = true;
-            ShowDialogue("Thank you! You found all my honey bottles!... And Thank you for playing the demo game!");
+            ShowDialogue("Thank you! You found all my honey bottles! Thank you for playing!");
         }
-        else if (collectedBottles == 0)
-            ShowDialogue("Hello explorer! Can you please help me find my 5 honey bottles!");
-        else
-            ShowDialogue("I still need " + (requiredBottles - collectedBottles) + " honey bottles!");
 
         UpdateQuest();
     }
 
     public void CollectBottle()
     {
-        if (!started || completed || collectedBottles >= requiredBottles) return;
+        if (!started || completed || collectedBottles >= requiredBottles)
+            return;
 
         collectedBottles++;
         UpdateQuest();
@@ -87,31 +94,44 @@ public class HoneyQuestManager : MonoBehaviour
 
     void UpdateQuest()
     {
-        questText.text = completed ? "Demo-Quest completed!" : collectedBottles >= requiredBottles ? "Talk to the quest giver!" : "Find " + (requiredBottles - collectedBottles) + " honey bottles";
+        questText.text = !started ? "Find the quest giver!" :
+            completed ? "Quest completed!" :
+            collectedBottles >= requiredBottles ? "Talk to the quest giver!" :
+            "Find " + (requiredBottles - collectedBottles) + " honey bottles";
     }
 
     void ShowDialogue(string message)
     {
         dialoguePanel.SetActive(true);
-        if (typing != null) StopCoroutine(typing);
+
+        if (typing != null)
+            StopCoroutine(typing);
+
         typing = StartCoroutine(TypeText(message));
     }
 
     IEnumerator TypeText(string message)
     {
         dialogueText.text = "";
+
         foreach (char c in message)
         {
             dialogueText.text += c;
             yield return new WaitForSeconds(0.035f);
         }
+
+        dialogueText.text += "\n[Z to continue]";
         typing = null;
     }
 
     void CloseDialogue()
     {
-        if (typing != null) StopCoroutine(typing);
-        typing = null;
+        if (typing != null)
+        {
+            StopCoroutine(typing);
+            typing = null;
+        }
+
         dialoguePanel.SetActive(false);
     }
 }
