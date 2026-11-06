@@ -1604,6 +1604,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: MiniMap
       objectReference: {fileID: 0}
+    - target: {fileID: 5275741999444719936, guid: ab81ce3c312df614595c24e5576187b4, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 6470340086148573258, guid: ab81ce3c312df614595c24e5576187b4, type: 3}
       propertyPath: m_LocalPosition.x
       value: 44.41976
@@ -7915,6 +7919,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameCanvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7015403733734667265, guid: dcab9b9b72261ec4a8d0f821127af691, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -9592,6 +9600,10 @@ PrefabInstance:
     - target: {fileID: 4530137413379601078, guid: 8b026718fd166ba4db6721c859a541ee, type: 3}
       propertyPath: m_Name
       value: Canvas (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 4530137413379601078, guid: 8b026718fd166ba4db6721c859a541ee, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5945757188231608762, guid: 8b026718fd166ba4db6721c859a541ee, type: 3}
       propertyPath: m_Pivot.x
