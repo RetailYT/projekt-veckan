@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 5117075643118310051}
   - component: {fileID: 5820701730676957188}
   - component: {fileID: 2544987624858192321}
-  - component: {fileID: 2564454555788841442}
   m_Layer: 0
   m_Name: 2dTestTP_0
   m_TagString: Untagged
@@ -125,15 +124,3 @@ CircleCollider2D:
   m_CompositeOrder: 0
   m_Offset: {x: 0, y: 0}
   m_Radius: 0.485
---- !u!114 &2564454555788841442
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2881570418912582706}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cebc3a79968aea44ba1d9051e5bbde58, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 

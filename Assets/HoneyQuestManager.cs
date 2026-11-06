@@ -1,6 +1,8 @@
+
 using UnityEngine;
 using TMPro;
 using System.Collections;
+using UnityEngine.SceneManagement;
 
 public class HoneyQuestManager : MonoBehaviour
 {
@@ -14,6 +16,7 @@ public class HoneyQuestManager : MonoBehaviour
     public GameObject dialoguePanel;
 
     bool playerNearby;
+    bool endingStarted;
     Coroutine typing;
 
     void Awake()
@@ -63,9 +66,13 @@ public class HoneyQuestManager : MonoBehaviour
 
     public void Talk()
     {
+        if (endingStarted)
+            return;
+
         if (!started)
         {
             started = true;
+
             ShowDialogue("Hello explorer! Can you please help me find my 5 honey bottles?");
         }
         else if (collectedBottles < requiredBottles)
@@ -77,10 +84,37 @@ public class HoneyQuestManager : MonoBehaviour
         else
         {
             completed = true;
+            endingStarted = true;
+
             ShowDialogue("Thank you! You found all my honey bottles! Thank you for playing!");
+
+            StartCoroutine(EndingSequence());
         }
 
         UpdateQuest();
+    }
+
+    IEnumerator EndingSequence()
+    {
+        while (typing != null)
+            yield return null;
+
+        yield return new WaitForSeconds(2f);
+
+        ShowDialogue("Wait a minute... what is happening......");
+
+        while (typing != null)
+            yield return null;
+
+        yield return new WaitForSeconds(2f);
+
+        Time.timeScale = 1f;
+
+        Instance = null;
+
+        Destroy(gameObject);
+
+        SceneManager.LoadScene("Main Menu");
     }
 
     public void CollectBottle()
@@ -94,7 +128,7 @@ public class HoneyQuestManager : MonoBehaviour
 
     void UpdateQuest()
     {
-        questText.text = !started ? "Find the quest giver!" :
+        questText.text = !started ? "Find the quest giver beside the cave!" :
             completed ? "Quest completed!" :
             collectedBottles >= requiredBottles ? "Talk to the quest giver!" :
             "Find " + (requiredBottles - collectedBottles) + " honey bottles";
@@ -133,5 +167,11 @@ public class HoneyQuestManager : MonoBehaviour
         }
 
         dialoguePanel.SetActive(false);
+    }
+
+    void OnDestroy()
+    {
+        if (Instance == this)
+            Instance = null;
     }
 }

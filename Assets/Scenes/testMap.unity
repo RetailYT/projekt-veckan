@@ -1331,8 +1331,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 2067813093}
-  speed: 2.5
-  detectionRange: 2
+  speed: 2
+  detectionRange: 5
 --- !u!60 &1647299637
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -1961,6 +1961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 100
   damage: 25
+  damageCooldown: 1
   healthText: {fileID: 1250054933}
 --- !u!114 &2067813098
 MonoBehaviour:
